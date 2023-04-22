@@ -1,62 +1,51 @@
 import React, { useState } from "react";
+import CSVReader from "react-csv-reader";
 
-const FloorPlan = () => {
-    const [dragging, setDragging] = useState(false);
-    const [positions, setPositions] = useState([
-        { id: 1, top: 100, left: 100 },
-        { id: 2, top: 200, left: 200 },
-        { id: 3, top: 300, left: 300 },
-    ]);
+const CsvReader = () => {
+    const [csvData, setCsvData] = useState(null);
 
-    const handleMouseDown = (id, e) => {
-        e.stopPropagation();
-        setDragging(id);
+    const handleCsvFileLoaded = (data, fileInfo) => {
+        // 'data' parameter contains the parsed CSV data as an array of objects
+        // 'fileInfo' parameter contains information about the loaded CSV file
+
+        // You can perform any desired operations with the CSV data here, such as saving it to state, passing it to another component, etc.
+        console.log("CSV Data:", data);
+        setCsvData(data);
     };
 
-    const handleMouseUp = () => {
-        setDragging(false);
-    };
-
-    const handleMouseMove = (e) => {
-        if (dragging) {
-            const updatedPositions = positions.map((position) =>
-                position.id === dragging
-                    ? { ...position, top: e.clientY, left: e.clientX }
-                    : position
-            );
-            setPositions(updatedPositions);
-        }
+    const handleCsvError = (err) => {
+        // 'err' parameter contains any error that occurred while loading the CSV file
+        console.error("CSV Error:", err);
     };
 
     return (
-        <div
-            style={{ position: "relative", height: "100vh", border: "1px solid #000" }}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
-        >
-            {positions.map((position) => (
-                <div
-                    key={position.id}
-                    style={{
-                        position: "absolute",
-                        top: position.top + "px",
-                        left: position.left + "px",
-                        width: "50px",
-                        height: "50px",
-                        backgroundColor: "#f00",
-                        color: "#fff",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        cursor: "pointer",
-                    }}
-                    onMouseDown={(e) => handleMouseDown(position.id, e)}
-                >
-                    {position.id}
+        <div>
+            <h1>CSV Reader</h1>
+            <CSVReader
+                cssClass="csv-reader-input"
+                label="Select CSV file"
+                onFileLoaded={handleCsvFileLoaded}
+                onError={handleCsvError}
+            />
+            {csvData && (
+                <div>
+                    <h2>CSV Contents:</h2>
+                    <ul>
+                        {csvData.map((row, index) => (
+                            <div className={"grid grid-cols-5"}>
+                                {(row[1].trim().toLowerCase().endsWith("g") || row[1].trim().toLowerCase().endsWith("grams")) ? row.map(item => <li className={"text-green-500"} key={index}>{item}</li>)
+                                    : (row[1].trim().toLowerCase().endsWith("bags") || row[1].trim().toLowerCase().endsWith("bages")) ? row.map(item => <li className={"text-violet-500"} key={index}>{item}</li>)
+                                    : (row[1].trim().toLowerCase().endsWith("ml") || row[1].trim().toLowerCase().endsWith("l")) ? row.map(item => <li className={"text-blue-500"} key={index}>{item}</li>)
+                                    : (row[1].trim().toLowerCase().endsWith("z")) ? row.map(item => <li className={"text-teal-400"} key={index}>{item}</li>)
+                                    : (row[1].trim().toLowerCase().endsWith("viyls") || row[1].trim().toLowerCase().endsWith("viyl")) ? row.map(item => <li className={"text-amber-950-400"} key={index}>{item}</li>)
+                                    : row.map(item => <li className={"text-red-500"} key={index}>{item}</li>)}
+                            </div>
+                        ))}
+                    </ul>
                 </div>
-            ))}
+            )}
         </div>
     );
 };
 
-export default FloorPlan;
+export default CsvReader;
