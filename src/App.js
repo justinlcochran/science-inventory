@@ -14,7 +14,7 @@ function App() {
         })
         .catch(error => {
             // Handle any errors
-            console.log(error)
+            console.log(error, "got it")
         });
 
     console.log(process.env.cognito_user_pool_id)
