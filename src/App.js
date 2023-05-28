@@ -17,7 +17,7 @@ function App() {
             console.log(error, "got it")
         });
 
-    console.log(process.env.AWS_APP_ID)
+    console.log(process.env.AWS_APP_ID, "env")
 
   return (
       <div className="App h-screen">
