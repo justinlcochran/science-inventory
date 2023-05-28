@@ -1,5 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import { Auth } from "aws-amplify";
+import amplifyConfig from 'aws-exports';
 import './App.css';
 
 import Home from "./pages/Home";
@@ -16,6 +17,8 @@ function App() {
             // Handle any errors
             console.log(error)
         });
+
+    console.log(process.env.cognito_user_pool_id)
 
   return (
       <div className="App h-screen">
