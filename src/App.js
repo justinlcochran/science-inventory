@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import { Auth } from "aws-amplify";
-import amplifyConfig from './aws-exports';
+import amplifyConfig from '../aws-exports';
 import './App.css';
 
 import Home from "./pages/Home";
