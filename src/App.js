@@ -17,7 +17,7 @@ function App() {
             console.log(error, "got it")
         });
 
-    console.log(process.env.cognito_user_pool_id)
+    console.log(process.env.AWS_APP_ID)
 
   return (
       <div className="App h-screen">
