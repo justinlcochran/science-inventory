@@ -68,6 +68,7 @@ export default function App() {
                 <main>
                     <h1>Hello {user.attributes.name}</h1>
                     <button onClick={signOut}>Sign out</button>
+                    <p>App Access, but not browser router access??</p>
                     <BrowserRouter>
                         <Routes>
                             <Route exact path='/prep' element={<Home />} />
