@@ -69,17 +69,11 @@ export default function App() {
                     <h1>Hello {user.attributes.name}</h1>
                     <button onClick={signOut}>Sign out</button>
                     <p>App Access, but not browser router access??</p>
-
+                    <York />
                 </main>
 
             )}
-            <BrowserRouter>
-                <Routes>
-                    <Route exact path='/prep' element={<Home />} />
-                    <Route exact path='/flinn' element={<Flinn />} />
-                    <Route exact path='/york' element={<York />} />
-                </Routes>
-            </BrowserRouter>
+
         </Authenticator>
 
         </>
