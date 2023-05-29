@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-scienceinventory-dev-172109-authRole",
+      "UnauthRoleArn": "arn:aws:iam::621342043979:role/amplify-scienceinventory-dev-172109-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::621342043979:role/amplify-scienceinventory-dev-172109-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-scienceinventory-dev-172109-deployment",
+      "UnauthRoleName": "amplify-scienceinventory-dev-172109-unauthRole",
+      "StackName": "amplify-scienceinventory-dev-172109",
+      "StackId": "arn:aws:cloudformation:us-east-1:621342043979:stack/amplify-scienceinventory-dev-172109/54937480-fdae-11ed-b3e2-0a52e8185fa9",
+      "AmplifyAppId": "d29aa8bfjl5hy"
+    },
+    "categories": {
+      "auth": {
+        "scienceinventorydc095448": {}
+      }
+    }
+  }
+}
