@@ -34,12 +34,12 @@ function York() {
         return (
             <div className="relative min-h-screen bg-green-200">
                 <div
-                    className="absolute top-0 left-0 w-3/5 h-3/5 bg-red-200 overflow-scroll"
+                    className="absolute top-0 left-0 w-3/5 h-3/5 bg-red-200 overflow-scroll-y"
                     style={{height: "60vh", width: "60vw"}}
                 >
                     <p>Search Bar Space</p>
                     {data.map(item =>
-                        <div key={item?._id} id={item.location}>{item.name}: {item.grade}</div>
+                        <div key={item?._id} id={item.location} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>{item.name}: {item.grade}</div>
                     )}
                     {/*<div key={"C13"} id={"C13"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Scale</div>*/}
                     {/*<div key={"C13"} id={"C7"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Glue</div>*/}
