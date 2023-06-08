@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 
 function York() {
-    const leftPrep = [["Hood"], ["Corrosive"], ["Flammable"], ["Canvas"], ["BS1", "BS2", "BS3", "BS4", "BS5", "BS6"], ["FS1", "FS2", "FS3"]]
-    const rightPrep = [["Fridge"], ["PC4", "PD1", "PD2", "PC1"], ["PC5", "PD3", "PD4", "PC2"], ["PD8", "PD7", "PD6", "PD5", "PC3"], ["Sink"], ["BS7", "BS8", "BS9", "BS10", "BS11", "BS12"], ["BS13", "BS14", "BS15", "BS16", "BS17", "BS18"]]
+    const leftPrep = [["Hood"], ["Corrosive Right"], ["Corrosive Left"], ["Canvas"], ["Solid Storage"], ["Flammable"]]
+    const rightPrep = [["Fridge"], ["PC4", "PD1", "PD2", "PC1"], ["PC5", "PD3", "PD4", "PC2"], ["PD8", "PD7", "PD6", "PD5", "PC3"], ["Sink"], ["Liquid Storage"]]
     const upperPhysics = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8"]
     const lowerPhysics = [["C9"], ["D1", "D2", "C10"], ["D3", "D4", "C11"], ["D5", "D6", "C12"], ["D7", "D8", "D9", "D10", "D11"], ["D12", "D13", "C13"], ["D14", "D15", "C14"], ["C15"], ["D16", "C16"], ["D17", "C17"]]
 
