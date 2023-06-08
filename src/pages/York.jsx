@@ -11,7 +11,7 @@ function York() {
 
     const onSearchClick = (e) => {
         let currentSearch = [...search]
-        currentSearch.push(data.filter(item => item._id.$oid === e.target.id));
+        currentSearch.push(data.filter(item => item._id.$oid === e.target.id)[0]);
         setSearch(currentSearch);
     }
 
