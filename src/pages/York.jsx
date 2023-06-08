@@ -273,7 +273,7 @@ function York() {
                     className="absolute bg-amber-200"
                     style={{height: "40vh", width: "40vw", top: "60vh", left: "60vw"}}
                 >
-                    <p>Order Interface</p>
+                    <p>Current Search</p>
                 </div>
             </div>
 
