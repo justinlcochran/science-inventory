@@ -39,7 +39,7 @@ function York() {
                 >
                     <p>Search Bar Space</p>
                     {data.map(item =>
-                        <div key={item?._id} id={item.location} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>{item.name}: {item.grade}</div>
+                        <div key={item._id} id={item.location} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>{item.name}: {item.grade}</div>
                     )}
                     {/*<div key={"C13"} id={"C13"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Scale</div>*/}
                     {/*<div key={"C13"} id={"C7"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Glue</div>*/}
