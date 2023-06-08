@@ -17,7 +17,7 @@ function York() {
 
     // style={{ box-shadow: search.includes(element) ? '10px' : 'none }}
 
-    console.log(search)
+    console.log(search, search.map(item => item.location))
     useEffect(() => {
         fetch(`https://s5l2dah2eajygazam7niwliex40xqrsa.lambda-url.us-east-1.on.aws/`)
             .then(res => res.json())
