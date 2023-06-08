@@ -34,7 +34,7 @@ function York() {
         return (
             <div className="relative min-h-screen bg-green-200">
                 <div
-                    className="absolute top-0 left-0 w-3/5 h-3/5 bg-red-200 overflow-scroll-y"
+                    className="absolute top-0 left-0 w-3/5 h-3/5 bg-red-200 overflow-y-scroll"
                     style={{height: "60vh", width: "60vw"}}
                 >
                     <p>Search Bar Space</p>
@@ -84,8 +84,11 @@ function York() {
                         </div>
                         <div id={"rightPrep"} className={"grid grid-cols-1 gap-1 h-[90%]"}>
                             {rightPrep.map(item =>
-                                (item.length === 1) ? <div key={item} id={item}
-                                                           className={"bg-blue-400 rounded px-6 flex justify-center items-center"}>{item}</div>
+                                (item.length === 1) ? <div key={item[0]} id={item[0]}
+                                                           className={"bg-blue-400 rounded px-6 flex justify-center items-center"} style={{
+                                        boxShadow: search.includes(item[0]) ? '0 0 6px 4px #ffce88' : 'none',
+                                        color: search.includes(item[0]) ? "white" : "black"
+                                    }}>{item}</div>
                                     : (item.length === 6) ?
                                         <div className={"grid grid-cols-6 text-2xs gap-3 bg-blue-500 p-1 rounded"}>
                                             {item.reverse().map(element => <div key={element} id={element}
