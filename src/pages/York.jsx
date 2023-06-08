@@ -56,8 +56,11 @@ function York() {
                     <div className={"grid grid-cols-2 gap-32 m-4 h-full"}>
                         <div id={"leftPrep"} className={"grid grid-cols-1 gap-1 h-[90%]"}>
                             {leftPrep.map(item =>
-                                (item.length === 1) ? <div key={item}
-                                                           className={"bg-blue-400 rounded px-6 flex justify-center items-center"}>{item}</div>
+                                (item.length === 1) ? <div key={item[0]} id={item[0]}
+                                                           className={"bg-blue-400 rounded px-6 flex justify-center items-center"} style={{
+                                        boxShadow: search.includes(item[0]) ? '0 0 6px 4px #ffce88' : 'none',
+                                        color: search.includes(item[0]) ? "white" : "black"
+                                    }}>{item}</div>
                                     : (item.length === 6) ?
                                         <div className={"grid grid-cols-6 text-2xs gap-3 bg-blue-500 p-1 rounded"}>
                                             {item.map(element => <div key={element} id={element}
