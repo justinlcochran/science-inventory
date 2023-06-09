@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import SearchComponent from "../components/searchComponent";
 
 function York() {
     const leftPrep = [["Hood"], ["Corrosive Right"], ["Corrosive Left"], ["Canvas"], ["Solid Storage"], ["Flammable"]]
@@ -17,7 +18,6 @@ function York() {
 
     // style={{ box-shadow: search.includes(element) ? '10px' : 'none }}
 
-    console.log(search, search.map(item => item.location))
     useEffect(() => {
         fetch(`https://s5l2dah2eajygazam7niwliex40xqrsa.lambda-url.us-east-1.on.aws/`)
             .then(res => res.json())
@@ -27,9 +27,7 @@ function York() {
                 }
             )
     }, [])
-    if (data) {
-        console.log(data)
-    }
+
     if (data) {
         return (
             <div className="relative min-h-screen bg-green-200">
@@ -38,9 +36,10 @@ function York() {
                     style={{height: "60vh", width: "60vw"}}
                 >
                     <p>Search Bar Space</p>
-                    {data.map(item =>
-                        <div key={item._id.$oid} id={item._id.$oid} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>{item.name}: {item.grade}</div>
-                    )}
+                    <SearchComponent data={data} onElementClick={onSearchClick} />
+                    {/*{data.map(item =>*/}
+                    {/*    <div key={item._id.$oid} id={item._id.$oid} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>{item.name}: {item.grade}</div>*/}
+                    {/*)}*/}
                     {/*<div key={"C13"} id={"C13"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Scale</div>*/}
                     {/*<div key={"C13"} id={"C7"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Glue</div>*/}
                     {/*<div key={"C13"} id={"PC1"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Well Plates</div>*/}
