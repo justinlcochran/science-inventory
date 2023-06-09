@@ -44,7 +44,7 @@ function York() {
                     {/*<div key={"C13"} id={"C7"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Glue</div>*/}
                     {/*<div key={"C13"} id={"PC1"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Well Plates</div>*/}
                     {/*<div key={"C13"} id={"PD6"} className={"bg-violet-400 p-6 m-2"} onClick={onSearchClick}>Thermometers</div>*/}
-                    <div id={"clear"} className={"bg-red-400 p-6 m-2"} onClick={() => setSearch([])}>Clear</div>
+
 
 
                 </div>
@@ -273,6 +273,8 @@ function York() {
                     style={{height: "40vh", width: "40vw", top: "60vh", left: "60vw"}}
                 >
                     <p>Current Search</p>
+                    {search.map(item => <p>{item.name}: {item.location}</p>)}
+                    <div id={"clear"} className={"bg-red-400 p-6 m-2"} onClick={() => setSearch([])}>Clear</div>
                 </div>
             </div>
 
