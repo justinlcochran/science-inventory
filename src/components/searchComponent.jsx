@@ -22,7 +22,7 @@ const SearchComponent = ({ data, onElementClick }) => {
 
             <ul>
                 {filteredData.map((obj) => (
-                    <li key={obj.id} onClick={onElementClick}>
+                    <li key={obj._id.$oid} id={obj._id.$oid} onClick={onElementClick}>
                         {obj.name} - {obj.location} - {obj.grade}
                     </li>
                 ))}
